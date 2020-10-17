@@ -22,4 +22,7 @@ api.add_resource(UserRegister,'/register')
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(StoreList, '/stores')
 if __name__=='__main__':
+    from db import db
+
+    db.init_app(app)
     app.run(port=5000,debug=True)
